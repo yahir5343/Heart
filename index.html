@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Corazón y Estrellas</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      background-color: #000;
+    }
+
+    #canvas {
+      display: block;
+    }
+
+    .mensaje {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+
+    #mensaje1 {
+      top: 33%;
+      font-size: 36px;
+      animation: pulse 1s infinite;
+    }
+
+    #mensaje2 {
+      top: 40%;
+      font-size: 24px;
+    }
+
+    #mensaje3 {
+      top: 45%;
+      font-size: 24px;
+    }
+    #mensaje4 {
+      top: 50%;
+      font-size: 24px;
+    }
+    #mensaje5 {
+      top: 55%;
+      font-size: 23px;
+    }
+
+    @keyframes pulse {
+      0% { font-size: 36px; }
+      50% { font-size: 38px; }
+      100% { font-size: 36px; }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" width="2500" height="1000"></canvas>
+  <div id="mensaje1" class="mensaje">¡Te adoro!</div>
+  <div id="mensaje2" class="mensaje">Especial ya eres, como una flor rara,</div>
+  <div id="mensaje3" class="mensaje">Tu esencia, mi melodía más clara.</div>
+  <div id="mensaje4" class="mensaje">Única, como la lluvia en sequía,</div>
+  <div id="mensaje5" class="mensaje">Eres mi solecito, mi eterna alegría.</div>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+    particlesJS('canvas', {
+      particles: {
+        number: { value: 100 },
+        color: { value: '#ff0000' },
+        shape: { type: 'circle' },
+        opacity: { value: 0.8 },
+        size: { value: 3 },
+        move: { enable: true, speed: 2 }
+      }
+    });
+
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    function drawHeart(x, y, size) {
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+      ctx.bezierCurveTo(x, y - size / 2, x - size, y - size / 2, x - size, y);
+      ctx.bezierCurveTo(x - size, y + size / 4, x, y + size / 2, x, y + size);
+      ctx.bezierCurveTo(x, y + size / 2, x + size, y + size / 4, x + size, y);
+      ctx.bezierCurveTo(x + size, y - size / 2, x, y - size / 2, x, y);
+      ctx.closePath();
+      ctx.fillStyle = 'rgba(255, 0, 0, 0.8)';
+      ctx.fill();
+    }
+
+    function drawNeonEffect() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      drawHeart(canvas.width / 2, canvas.height / 2, 50);
+
+      requestAnimationFrame(drawNeonEffect);
+    }
+
+    drawNeonEffect();
+  </script>
+</body>
+</html>
