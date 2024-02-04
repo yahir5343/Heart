@@ -25,38 +25,44 @@
     }
 
     #mensaje1 {
-      top: 33%;
-      font-size: 36px;
+      top: 15%;
+      font-size: 8vw;
       animation: pulse 1s infinite;
     }
 
+    #mensaje2,
+    #mensaje3,
+    #mensaje4,
+    #mensaje5 {
+      font-size: 4vw;
+      margin-top: 2vw;
+    }
+
     #mensaje2 {
-      top: 40%;
-      font-size: 24px;
+      top: 30%;
     }
 
     #mensaje3 {
-      top: 45%;
-      font-size: 24px;
+      top: 40%;
     }
+
     #mensaje4 {
       top: 50%;
-      font-size: 24px;
     }
+
     #mensaje5 {
-      top: 55%;
-      font-size: 23px;
+      top: 60%;
     }
 
     @keyframes pulse {
-      0% { font-size: 36px; }
-      50% { font-size: 38px; }
-      100% { font-size: 36px; }
+      0% { font-size: 8vw; }
+      50% { font-size: 9vw; }
+      100% { font-size: 8vw; }
     }
   </style>
 </head>
 <body>
-  <canvas id="canvas" width="2500" height="1000"></canvas>
+  <canvas id="canvas" width="1200" height="600"></canvas>
   <div id="mensaje1" class="mensaje">¡Te adoro!</div>
   <div id="mensaje2" class="mensaje">Especial ya eres, como una flor rara,</div>
   <div id="mensaje3" class="mensaje">Tu esencia, mi melodía más clara.</div>
@@ -93,8 +99,7 @@
 
     function drawNeonEffect() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      drawHeart(canvas.width / 2, canvas.height / 2, 50);
-
+      drawHeart(canvas.width / 2, canvas.height / 2, 300);
       requestAnimationFrame(drawNeonEffect);
     }
 
