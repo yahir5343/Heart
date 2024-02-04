@@ -7,3 +7,10 @@
     overflow: hidden;
 
  }
+ @media (max-width: 600px) {
+    .mensaje {
+      font-size: 16px;
+    }
+
+  }
+  
