@@ -12,6 +12,8 @@
     }
 
     #canvas {
+      width: 100vw; /* Ajustar el canvas al ancho de la ventana */
+      height: 100vh; /* Ajustar el canvas al alto de la ventana */
       display: block;
     }
 
@@ -25,38 +27,38 @@
     }
 
     #mensaje1 {
-      top: 33%;
-      font-size: 3vw; /* Tamaño relativo al ancho de la pantalla */
+      top: 33vh; /* Posición vertical relativa */
+      font-size: 5vw; /* Tamaño del texto relativo al ancho de la ventana */
       animation: pulse 1s infinite;
     }
 
     #mensaje2 {
-      top: 40%;
-      font-size: 2vw; /* Tamaño relativo al ancho de la pantalla */
+      top: 40vh;
+      font-size: 3vw;
     }
 
     #mensaje3 {
-      top: 45%;
-      font-size: 2vw; /* Tamaño relativo al ancho de la pantalla */
+      top: 45vh;
+      font-size: 3vw;
     }
     #mensaje4 {
-      top: 50%;
-      font-size: 2vw; /* Tamaño relativo al ancho de la pantalla */
+      top: 50vh;
+      font-size: 3vw;
     }
     #mensaje5 {
-      top: 55%;
-      font-size: 1.5vw; /* Tamaño relativo al ancho de la pantalla */
+      top: 55vh;
+      font-size: 2.5vw;
     }
 
     @keyframes pulse {
-      0% { font-size: 3vw; }
-      50% { font-size: 3.2vw; }
-      100% { font-size: 3vw; }
+      0% { font-size: 5vw; }
+      50% { font-size: 5.5vw; }
+      100% { font-size: 5vw; }
     }
   </style>
 </head>
 <body>
-  <canvas id="canvas" width="2500" height="1000"></canvas>
+  <canvas id="canvas"></canvas>
   <div id="mensaje1" class="mensaje">¡Te adoro!</div>
   <div id="mensaje2" class="mensaje">Especial ya eres, como una flor rara,</div>
   <div id="mensaje3" class="mensaje">Tu esencia, mi melodía más clara.</div>
