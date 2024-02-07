@@ -26,32 +26,32 @@
 
     #mensaje1 {
       top: 33%;
-      font-size: calc(4vw + 4vh); /* Tamaño del texto ajustado */
+      font-size: 3vw; /* Tamaño relativo al ancho de la pantalla */
       animation: pulse 1s infinite;
     }
 
     #mensaje2 {
       top: 40%;
-      font-size: calc(2vw + 2vh); /* Tamaño del texto ajustado */
+      font-size: 2vw; /* Tamaño relativo al ancho de la pantalla */
     }
 
     #mensaje3 {
       top: 45%;
-      font-size: calc(2vw + 2vh); /* Tamaño del texto ajustado */
+      font-size: 2vw; /* Tamaño relativo al ancho de la pantalla */
     }
     #mensaje4 {
       top: 50%;
-      font-size: calc(2vw + 2vh); /* Tamaño del texto ajustado */
+      font-size: 2vw; /* Tamaño relativo al ancho de la pantalla */
     }
     #mensaje5 {
       top: 55%;
-      font-size: calc(2vw + 2vh); /* Tamaño del texto ajustado */
+      font-size: 1.5vw; /* Tamaño relativo al ancho de la pantalla */
     }
 
     @keyframes pulse {
-      0% { font-size: calc(4vw + 4vh); } /* Tamaño del texto ajustado */
-      50% { font-size: calc(4.2vw + 4.2vh); } /* Tamaño del texto ajustado */
-      100% { font-size: calc(4vw + 4vh); } /* Tamaño del texto ajustado */
+      0% { font-size: 3vw; }
+      50% { font-size: 3.2vw; }
+      100% { font-size: 3vw; }
     }
   </style>
 </head>
@@ -62,44 +62,6 @@
   <div id="mensaje3" class="mensaje">Tu esencia, mi melodía más clara.</div>
   <div id="mensaje4" class="mensaje">Única, como la lluvia en sequía,</div>
   <div id="mensaje5" class="mensaje">Eres mi solecito, mi eterna alegría.</div>
-  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
   <script src="script.js"></script>
-  <script>
-    particlesJS('canvas', {
-      particles: {
-        number: { value: 100 },
-        color: { value: '#ff0000' },
-        shape: { type: 'circle' },
-        opacity: { value: 0.8 },
-        size: { value: 3 },
-        move: { enable: true, speed: 2 }
-      }
-    });
-
-    const canvas = document.getElementById('canvas');
-    const ctx = canvas.getContext('2d');
-
-    function drawHeart(x, y, size) {
-      ctx.beginPath();
-      ctx.moveTo(x, y);
-      ctx.bezierCurveTo(x, y - size / 2, x - size, y - size / 2, x - size, y);
-      ctx.bezierCurveTo(x - size, y + size / 4, x, y + size / 2, x, y + size);
-      ctx.bezierCurveTo(x, y + size / 2, x + size, y + size / 4, x + size, y);
-      ctx.bezierCurveTo(x + size, y - size / 2, x, y - size / 2, x, y);
-      ctx.closePath();
-      ctx.fillStyle = 'rgba(255, 0, 0, 0.8)';
-      ctx.fill();
-    }
-
-    function drawNeonEffect() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      const heartSize = Math.min(window.innerWidth, window.innerHeight) * 0.1; // Tamaño del corazón ajustado
-      drawHeart(canvas.width / 2, canvas.height / 2, heartSize);
-
-      requestAnimationFrame(drawNeonEffect);
-    }
-
-    drawNeonEffect();
-  </script>
 </body>
 </html>
