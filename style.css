@@ -4,13 +4,58 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
     overflow: hidden;
+    background-color: #000;
+}
 
- }
- @media (max-width: 2500px) {
+#canvas {
+    display: block;
+}
+
+.mensaje {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center; /* Alineación centrada del texto */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+#mensaje1 {
+    font-size: 36px;
+    animation: pulse 1s infinite;
+}
+
+#mensaje2 {
+    font-size: 24px;
+}
+
+#mensaje3 {
+    font-size: 24px;
+}
+
+#mensaje4 {
+    font-size: 24px;
+}
+
+#mensaje5 {
+    font-size: 23px;
+}
+
+@keyframes pulse {
+    0% { font-size: 36px; }
+    50% { font-size: 38px; }
+    100% { font-size: 36px; }
+}
+
+@media (max-width: 600px) {
+    /* Estilos específicos para dispositivos móviles */
     .mensaje {
-      font-size: 16px;
+        font-size: 16px; /* Tamaño de fuente más pequeño para dispositivos móviles */
     }
-
-  }
-  
+}
