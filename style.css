@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: #000;
+}
+
+#canvas {
+  display: block;
+}
+
+.mensaje {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+#mensaje1 {
+  top: 33%; /* Ajusta la posición vertical según sea necesario */
+  font-size: 2vw; /* Tamaño de fuente relativo */
+  animation: pulse 1s infinite;
+}
+
+#mensaje2 {
+  top: 40%; /* Ajusta la posición vertical según sea necesario */
+  font-size: 1.5vw; /* Tamaño de fuente relativo */
+}
+
+#mensaje3 {
+  top: 45%; /* Ajusta la posición vertical según sea necesario */
+  font-size: 1.5vw; /* Tamaño de fuente relativo */
+}
+
+#mensaje4 {
+  top: 50%; /* Ajusta la posición vertical según sea necesario */
+  font-size: 1.5vw; /* Tamaño de fuente relativo */
+}
+
+#mensaje5 {
+  top: 55%; /* Ajusta la posición vertical según sea necesario */
+  font-size: 1.2vw; /* Tamaño de fuente relativo */
+}
+
+@keyframes pulse {
+  0% { font-size: 2vw; }
+  50% { font-size: 2.2vw; }
+  100% { font-size: 2vw; }
+}
